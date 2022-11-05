@@ -1,0 +1,29 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f5f7;
+    padding: 8px 12px;
+    border-radius: 10px;
+
+    &__sub {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .sub__field {
+            background-color: transparent;
+            border: none;
+            margin: 5px 0px 5px 0px;
+            outline: none;
+            width: 100%;
+        }
+        .sub__field::placeholder {
+            font-size: 15px;
+            color: #b4bcc2;
+        }
+    }
+    &__label {
+        font-size: 15px;
+        color: #b4bcc2;
+    }
+}

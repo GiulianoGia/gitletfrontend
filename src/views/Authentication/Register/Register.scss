@@ -1,0 +1,31 @@
+.register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__modal {
+        width: 300px;
+        height: auto;
+
+        .modal__form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .form__section {
+                display: flex;
+                flex-direction: column;
+
+                .section__input {
+                    background-color: transparent;
+                    border: 1px solid white;
+                    padding: 3px 10px;
+                    margin: 5px;
+                }
+                .section__input:focus {
+                    outline: 1px solid orange;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__modal {
+        width: 350px;
+        height: auto;
+        -webkit-box-shadow: 2px 5px 15px 3px #b9b9b96f; 
+        box-shadow: 2px 5px 15px 3px #b9b9b96f;
+        border-radius: 10px;
+        padding: 30px;
+
+        .modal__form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .form__section {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .modal__link {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+
+            .link__item {
+                color: black;
+            }
+        }
+    }
+}

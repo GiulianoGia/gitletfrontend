@@ -1,0 +1,16 @@
+.button {
+    &__item {
+        padding: 15px 0px;
+        background-color: #2753f1;
+        color: white;
+        border: none;
+        border-radius: 30px;
+    }
+    &__item:hover {
+        background-color:#274dd9;
+    }
+}
+
+.max {
+    width: 100%;
+}
