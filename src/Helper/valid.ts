@@ -8,7 +8,25 @@ export function validateEmail(email: string): boolean {
  * @param password Minimum eight characters, at least one letter and one number
  */
 export function validatePassword(password: string): boolean {
-    const passwordRegex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
-    console.log(passwordRegex.test(password))
+    const passwordRegex = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/);
     return passwordRegex.test(password);
+}
+
+/**
+ * 
+ * @returns if text is typeof string 
+ */
+export function validateText(text: string): boolean {
+    const textRegex = new RegExp(/^[A-Za-z\s]*$/);
+    return textRegex.test(text);
+}
+
+/**
+ * 
+ * @param text for expample an age
+ * @returns if the text only includes numbers
+ */
+export function validateNumber(text: string): boolean {
+    const numberRegex = new RegExp(/^\d+$/)
+    return numberRegex.test(text);
 }

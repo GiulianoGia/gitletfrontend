@@ -1,7 +1,7 @@
 .input {
     display: flex;
     flex-direction: column;
-    background-color: #f3f5f7;
+    border: 2px solid #dee2e6;
     padding: 8px 12px;
     border-radius: 10px;
 
@@ -25,5 +25,18 @@
     &__label {
         font-size: 15px;
         color: #b4bcc2;
+        width: min-content;
+        background-color: white;
+        padding: 0px 5px;
     }
+}
+
+.error {
+    border: 1px solid red;
+}
+.valid {
+    border: 1px solid green;
+}
+.active .input__label{
+    margin-top: -18px;
 }

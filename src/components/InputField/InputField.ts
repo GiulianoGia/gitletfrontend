@@ -1,5 +1,5 @@
-import { validatePassword } from '@/Helper/valid';
-import { computed, defineComponent } from 'vue';
+import { validateEmail, validateNumber, validatePassword, validateText } from '@/Helper/valid';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'inputField',
@@ -33,15 +33,15 @@ export default defineComponent({
         }
     },
     methods: {
-        /*
-        validate():void {
-            if (this.dataType.toString() == 'password') {
-                if (!validatePassword(this.text)) {
-                    this.hasError = true;
-                }
+        validate(text: string, type: string):boolean {
+            if (text !== '')  {
+                if (type === 'password') return validatePassword(text);
+                else if (type === 'email') return validateEmail(text);
+                else if (type === 'text') return validateText(text);
+                else if (type === 'number') return validateNumber(text);
             }
+            return true;
         }
-        */
     },
     watch: {
         'text': function() {

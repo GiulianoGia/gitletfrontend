@@ -4,6 +4,7 @@ import { createUser } from "@/Helper/user";
 import { isEmpty } from '@/Helper/auth';
 import { validateEmail, validatePassword } from '@/Helper/valid';
 import InputField from '@/components/InputField/InputField.vue';
+import Button from '@/components/Button/Button.vue';
 
 export default defineComponent({
     name: 'register',
@@ -19,7 +20,8 @@ export default defineComponent({
         }
     },
     components: {
-        InputField
+        InputField,
+        Button
     },
     methods: {
         async createNewUser() {

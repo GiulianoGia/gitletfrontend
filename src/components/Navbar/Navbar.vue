@@ -11,6 +11,9 @@
                 <div class="items__item">
                     <p>Learn</p>
                 </div>
+                <div class="items__item">
+                    <p>Create</p>
+                </div>
             </div>
             <div class="top-section__features">
                 <div class="features__feature">
