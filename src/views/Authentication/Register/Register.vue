@@ -4,7 +4,7 @@
             <h1>Register</h1>
             <form class="modal__form">
                 <div  class="form__section">
-                    <InputField type="text" v-model="user.username" label="username" />
+                    <InputField  type="text" v-model="user.username" label="username" />
                 </div>
                 <div class="form__section">
                     <InputField type="password" v-model="user.password" label="password" />
