@@ -45,3 +45,9 @@ export async function  deleteUser(id: number) {
         .then((response) => response.json())
         .catch((error) => console.log(error));
 }
+
+export async function loginUser(user: User) {
+    return await fetch(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`)
+        .then((response) => response.json)
+        .catch((error) => console.log(error));
+}

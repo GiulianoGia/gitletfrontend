@@ -8,7 +8,6 @@
                 </div>
                 <div class="form__section">
                     <InputField type="password" v-model="user.password" label="password" />
-                    <!--<InputField type="password" label="repeat password" />-->
                 </div>
                 <div class="form__section">
                     <InputField type="email" v-model="user.email" label="email" />

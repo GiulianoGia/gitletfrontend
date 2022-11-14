@@ -19,7 +19,11 @@ export default defineComponent({
             validator(value: string) {
                 return ['email', 'password', 'text', 'number'].includes(value)
             }
-        }
+        },
+        disableValidation: {
+            type: Boolean,
+            required: false,
+        } 
     },
     emits: ['update:modelValue'],
     data() {
@@ -29,12 +33,12 @@ export default defineComponent({
             maxNumber: 0,
             content: this.value,
             hasError: false,
-            active: false
+            active: false,
+            disableValidation: this.disableValidation
         }
-    },
-    methods: {
+    },   methods: {
         validate(text: string, type: string):boolean {
-            if (text !== '')  {
+            if (text !== '' && !this.disableValidation)  {
                 if (type === 'password') return validatePassword(text);
                 else if (type === 'email') return validateEmail(text);
                 else if (type === 'text') return validateText(text);

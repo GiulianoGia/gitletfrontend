@@ -25,6 +25,7 @@ export default defineComponent({
       methods: {
         async loginUser() {
             if (isObjectEmpty(this.user)) {
+                this.loginUser();
                 router.push("/");
             } else this.showError()
         },

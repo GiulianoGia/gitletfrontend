@@ -17,13 +17,13 @@
             </div>
             <div class="top-section__features">
                 <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/lupe.png">
+                    <img class="icon" src="@/assets/icons/search.png">
                 </div>
                 <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/einstellungen.png">
+                    <img class="icon" src="@/assets/icons/setting.png">
                 </div>
                 <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/nutzer2.png">
+                    <img class="icon" src="@/assets/icons/profile.png">
                 </div>
             </div>
         </nav>
