@@ -1,10 +1,12 @@
 // store/index.js
 import { createStore } from "vuex";
 import axios from "axios";
+import { User } from '@/types/User'
+
 export default createStore({
     state: {
         users: [],
-        user: []
+        user: {} as User
     },
     getters: {
         getUsers: function(state) {

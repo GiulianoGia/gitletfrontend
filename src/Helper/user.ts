@@ -1,6 +1,11 @@
 import axios from "axios";
 import { User } from "@/types/User";
 import { showNotification } from "@/Helper/notification";
+import { LoginResponse } from "@/types/Auth/LoginResponse";
+import { hashCode } from "./hash";
+import store from "@/store/user";
+import router from "@/router";
+import { redirectIfAuth } from "./auth";
 
 /**
  * 
@@ -48,8 +53,20 @@ export async function deleteUser(id: number) {
         .catch((error) => console.log(error));
 }
 
+function setUserSession(session: string, username: string, password: string) {
+    axios.post(`http://localhost:8081/set/session/user?username=${username}&password=${password}&session=${session}`);
+}
+
 export async function loginUser(user: User) {
-    return await fetch(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`)
-        .then((response) => response.json)
+    return await axios.post(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`, {method: 'POST'})
+        .then((response) => {
+            const user: User = response.data;
+            store.state.user = user;
+            const session = hashCode(user.username).toString();
+            setUserSession(session, user.username, user.password);
+            document.cookie = `username=${user.username}`;
+            document.cookie = `session=${session}`;
+            redirectIfAuth();
+        })
         .catch((error) => showNotification());
 }

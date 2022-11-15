@@ -18,7 +18,8 @@ export default defineComponent({
 </script>
 <style>
   html {
-    background-color: white;
+    background-color: black;
+    color: white;
     font-family: sans-serif;
   }
   body {

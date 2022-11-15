@@ -14,25 +14,16 @@
                 <div class="items__item">
                     <p>Create</p>
                 </div>
+                <div class="items__item">
+                    <p>Group</p>
+                </div>
             </div>
             <div class="top-section__features">
-                <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/search.png">
-                </div>
-                <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/setting.png">
-                </div>
                 <div class="features__feature">
                     <img class="icon" src="@/assets/icons/profile.png">
                 </div>
             </div>
         </nav>
-        <div class="navbar__menu">
-            <div class="menu__items">
-                <p class="items__item">Lernsets</p>
-                <p class="items__item">Group</p>
-            </div>
-        </div>
     </div>
 </template>
 <script lang="ts" src="./Navbar.ts"></script>

@@ -4,4 +4,5 @@ export interface User {
     id: number;
     email: string;
     age: number;
+    session: string;
 }

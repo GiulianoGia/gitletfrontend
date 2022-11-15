@@ -1,16 +1,16 @@
 .login {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
+    
     &__modal {
         width: 350px;
         height: auto;
-        -webkit-box-shadow: 2px 5px 15px 3px #b9b9b96f; 
-        box-shadow: 2px 5px 15px 3px #b9b9b96f;
         border-radius: 10px;
         padding: 30px;
+        border: 1px solid rgb(48, 48, 48);
 
         .modal__form {
             display: flex;
@@ -28,7 +28,7 @@
             margin-top: 15px;
 
             .link__item {
-                color: black;
+                color: white;
             }
         }
     }

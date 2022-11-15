@@ -7,6 +7,7 @@ import InputField from "@/components/InputField/InputField.vue";
 import Button from "@/components/Button/Button.vue";
 import { isObjectEmpty } from "@/Helper/object";
 import { loginUser as login} from "@/Helper/user";
+import { redirectIfAuth } from "@/Helper/auth";
 
 export default defineComponent({
     name: 'login',
@@ -26,7 +27,7 @@ export default defineComponent({
       methods: {
         async loginUser() {
             if (isObjectEmpty(this.user)) {
-                login(this.user as User);
+                login(this.user as User)
                 router.push("/");
             } else this.showError()
         },
@@ -34,5 +35,8 @@ export default defineComponent({
             this.error = true;
             setTimeout(() => {this.error = false}, 1500);
         }
-      }
+    },
+    created() {
+        redirectIfAuth();
+    }
 }); 

@@ -8,6 +8,4 @@
     </div>
 </template>
 <script lang="ts" src="./Button.ts"></script>
-<style lang="scss" scoped src="./Button.scss">
-
-</style>
+<style lang="scss" scoped src="./Button.scss"></style>

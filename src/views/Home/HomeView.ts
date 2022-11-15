@@ -1,7 +1,8 @@
 import { defineComponent } from 'vue';
 import { getCookie } from '@/Helper/cookie'
 import router from '@/router';
-
+import { redirectIfAuth } from '@/Helper/auth';
+ 
 export default defineComponent({
   name: 'Home',
   data() {
@@ -10,10 +11,6 @@ export default defineComponent({
     }
   },
   created() {
-      if (getCookie('user') !== undefined) {
-        window.alert(getCookie('user'));
-      } else {
-        router.push("login");
-      }
+      redirectIfAuth();
   },
 });

@@ -16,6 +16,7 @@
             margin: 5px 0px 5px 0px;
             outline: none;
             width: 100%;
+            color: white;
         }
         .sub__field::placeholder {
             font-size: 15px;
@@ -26,13 +27,13 @@
         font-size: 15px;
         color: #b4bcc2;
         width: min-content;
-        background-color: white;
+        background-color: black;
         padding: 0px 5px;
     }
 }
 
 .error {
-    border: 1px solid red;
+    border: 1px solid rgb(238, 83, 83);
 }
 .valid {
     border: 1px solid green;
