@@ -1,5 +1,7 @@
 import axios from "axios";
 import { User } from "@/types/User";
+import { showNotification } from "@/Helper/notification";
+
 /**
  * 
  * @param username name of the user
@@ -15,7 +17,7 @@ export async function getUser(username: string): Promise<User> {
  * 
  * @returns all users in the database 
  */
-export async function getAllUsers() : Promise<Array<User>> {
+export async function getAllUsers(): Promise<Array<User>> {
     return await fetch("http://localhost:8081/get/users/all")
         .then((response) => response.json())
         .then((data: Array<User>) => { return data; });
@@ -32,7 +34,7 @@ export async function getAllUsers() : Promise<Array<User>> {
 export async function createUser(username: string, password: string, age: number, email: string): Promise<User> {
     return await fetch(`http://localhost:8081/new/user?username=${username}&password=${password}&age=${age}&email=${email}`)
         .then((reponse) => reponse.json())
-        .then((data: User) => { return data});
+        .then((data: User) => { return data });
 }
 
 /**
@@ -40,7 +42,7 @@ export async function createUser(username: string, password: string, age: number
  * @param id id of the user from the database
  * @returns an error
  */
-export async function  deleteUser(id: number) {
+export async function deleteUser(id: number) {
     return await fetch(`http://localhost:8081/delete/user?id=${id}`)
         .then((response) => response.json())
         .catch((error) => console.log(error));
@@ -49,5 +51,5 @@ export async function  deleteUser(id: number) {
 export async function loginUser(user: User) {
     return await fetch(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`)
         .then((response) => response.json)
-        .catch((error) => console.log(error));
+        .catch((error) => showNotification());
 }

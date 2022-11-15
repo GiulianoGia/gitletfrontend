@@ -6,12 +6,11 @@ export default defineComponent({
     name: 'notification',
     data() {
         return {
-            isActive: false
         }
     },
     computed: {
         isActive() {
-            return notification.getters('getIsActive');
+            return notification.state.isActive;
         }
     }
 });

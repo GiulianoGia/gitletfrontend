@@ -34,11 +34,11 @@ export default defineComponent({
             content: this.value,
             hasError: false,
             active: false,
-            disableValidation: this.disableValidation
+            disableValidations: this.disableValidation
         }
     },   methods: {
         validate(text: string, type: string):boolean {
-            if (text !== '' && !this.disableValidation)  {
+            if (text !== '' && !this.disableValidations)  {
                 if (type === 'password') return validatePassword(text);
                 else if (type === 'email') return validateEmail(text);
                 else if (type === 'text') return validateText(text);

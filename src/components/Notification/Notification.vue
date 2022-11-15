@@ -1,6 +1,6 @@
 <template>
-    <div class="notification">
-        
+    <div :class="isActive ? 'enabled' : 'disabled'" class="notification">
+        <p>Error!</p>
     </div>
 </template>
 <script lang="ts" src="./Notification.ts"></script>

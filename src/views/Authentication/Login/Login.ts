@@ -6,6 +6,7 @@ import router from "@/router";
 import InputField from "@/components/InputField/InputField.vue";
 import Button from "@/components/Button/Button.vue";
 import { isObjectEmpty } from "@/Helper/object";
+import { loginUser as login} from "@/Helper/user";
 
 export default defineComponent({
     name: 'login',
@@ -14,7 +15,7 @@ export default defineComponent({
             user: {
                 username: '',
                 password: ''
-            } as User,
+            },
             error: false
         };
       },
@@ -25,7 +26,7 @@ export default defineComponent({
       methods: {
         async loginUser() {
             if (isObjectEmpty(this.user)) {
-                this.loginUser();
+                login(this.user as User);
                 router.push("/");
             } else this.showError()
         },

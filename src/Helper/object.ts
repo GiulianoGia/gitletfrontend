@@ -1,8 +1,9 @@
 export function isObjectEmpty(obj: Object):boolean {
-    for(var prop in obj) {
-        if(obj.hasOwnProperty(prop))
-            return false;
-    }
-
-    return true;
+    let valid = true;
+    Object.values(obj).forEach(value => {
+        if (value.length === 0) {
+            valid = false;
+        }
+    });
+    return valid;
 }
