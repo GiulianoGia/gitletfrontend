@@ -1,5 +1,4 @@
 import { defineComponent } from "vue";
-import { getUser } from "@/Helper/user";
 import { validateEmail, validatePassword } from "@/Helper/valid";
 import { User } from '@/types/User'
 import router from "@/router";
@@ -28,7 +27,6 @@ export default defineComponent({
         async loginUser() {
             if (isObjectEmpty(this.user)) {
                 login(this.user as User)
-                router.push("/");
             } else this.showError()
         },
         showError() {

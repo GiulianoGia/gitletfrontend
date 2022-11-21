@@ -1,9 +1,10 @@
 .button {
+    
     &__item {
         padding: 15px 0px;
-        background-color: #2753f1;
+        border: 2px solid #2753f1;
+        background-color: transparent;
         color: white;
-        border: none;
         border-radius: 30px;
     }
     &__item:hover {

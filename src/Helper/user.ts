@@ -6,16 +6,18 @@ import { hashCode } from "./hash";
 import store from "@/store/user";
 import router from "@/router";
 import { redirectIfAuth } from "./auth";
+import { getCookie } from "./cookie";
 
 /**
  * 
- * @param username name of the user
- * @returns a user with the username
- */
-export async function getUser(username: string): Promise<User> {
-    return await fetch("http://localhost:8081/get/user/username?username=" + username)
-        .then((response) => response.json())
-        .then((data: User) => { return data; });
+ * @returns a user with the username  */
+export async function getCurrentUser(): Promise<User> {
+    const username = getCookie("username")!;
+    const session = getCookie("session")!;
+    return axios.get(`http://localhost:8081/get/user/username/session?username=${username}&session=${session}`).then((response) => {
+        const user: User = response.data;
+        return user;
+    })
 }
 
 /**
@@ -57,6 +59,11 @@ function setUserSession(session: string, username: string, password: string) {
     axios.post(`http://localhost:8081/set/session/user?username=${username}&password=${password}&session=${session}`);
 }
 
+/**
+ * 
+ * @param user data from the form of the login process
+ * @creates cookie and session for the user
+ */
 export async function loginUser(user: User) {
     return await axios.post(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`, {method: 'POST'})
         .then((response) => {
