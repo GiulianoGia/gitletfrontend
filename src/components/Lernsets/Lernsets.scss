@@ -1,0 +1,16 @@
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    &__lernset {
+        width: 300px;
+        height: 150px;
+        padding: 10px;
+        background-color: rgb(24, 22, 22);
+    
+        .lernset__title {
+            margin: 0px;
+        }
+    }
+}

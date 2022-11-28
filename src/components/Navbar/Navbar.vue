@@ -1,9 +1,6 @@
 <template>
     <div class="navbar">
         <nav class="navbar__top-section">
-            <div class="top-section__logo">
-                <p class="logo__title">GitLet</p>
-            </div>
             <div class="top-section__items">
                 <div class="items__item">
                     <p>Home</p>
@@ -20,7 +17,7 @@
             </div>
             <div class="top-section__features">
                 <div class="features__feature">
-                    <img class="icon" src="@/assets/icons/profile.png">
+                    <p>Profile</p>
                 </div>
             </div>
         </nav>
