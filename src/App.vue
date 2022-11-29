@@ -18,9 +18,12 @@ export default defineComponent({
 </script>
 <style>
   html {
-    background-color: black;
+    background-color: #0e1014;
     color: white;
     font-family: sans-serif;
+  }
+  html::-webkit-scrollbar {
+    display: none;
   }
   body {
     margin: 0px;

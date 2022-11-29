@@ -1,0 +1,28 @@
+.features {
+    background-color: #15171e;
+    padding: 20px;
+    &__flexbox {
+        display: flex;
+        gap: 20px;
+        .flexbox__container {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            background-color: #313c4b63;
+            border-radius: 10px;
+
+            .container__icon {
+                padding: 0;
+                margin: 0;
+                font-size: 40px;
+            }
+        }
+        .flexbox__container:hover {
+            background-color: #313c4b3e;
+        }
+    }
+}

@@ -1,13 +1,9 @@
 import { defineComponent, getCurrentInstance } from 'vue';
-import { getCookie } from '@/Helper/cookie'
-import router from '@/router';
-import { redirectIfAuth } from '@/Helper/auth';
-import store from '@/store/user';
 import { User } from '@/types/User'
 import { getCurrentUser } from '@/Helper/user';
 import Lernsets from '@/components/Lernsets/Lernsets.vue';
-import { Lernset } from '@/types/Lernset';
-import { getLernsetFromUser } from '@/Helper/lernsets';
+import Features from '@/components/Features/Features.vue';
+import SearchField from '@/components/SearchField/SearchField.vue';
  
 export default defineComponent({
   name: 'Home',
@@ -17,7 +13,9 @@ export default defineComponent({
     }
   },
   components: {
-    Lernsets
+    Lernsets,
+    Features,
+    SearchField
   },
   methods: {
   },

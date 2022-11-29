@@ -2,7 +2,7 @@
   <div class="flex-box">
     <div class="flex-box__lernset" v-for="lernset in lernsets" :key="lernset.name">
       <p class="lernset__title">{{lernset.name}}</p>
-      <p class="lernset__title">{{lernset.description}}</p>
+      <p class="lernset__description">{{lernset.description}}</p>
     </div>
   </div>
 </template>
