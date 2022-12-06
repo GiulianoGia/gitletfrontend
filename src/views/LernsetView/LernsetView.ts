@@ -3,13 +3,15 @@ import { Lernset } from '@/types/Lernset';
 import { defineComponent } from 'vue';
 import options from '@/mocks/options.json';
 import Carousel from '@/components/ Carousel/Carousel.vue';
+import words from '@/mocks/words.json'
 
 export default defineComponent({
     name: 'lernset-view',
     data() {
         return {
             lernset: {} as Lernset,
-            options: options
+            options: options,
+            words: words
         }
     },
     components: {

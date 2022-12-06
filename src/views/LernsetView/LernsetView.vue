@@ -9,6 +9,13 @@
         </div>
       </div>
       <Carousel />
+      <h3>Alle Begriffe</h3>
+      <div class="container__overview">
+        <div class="overview__section" v-for="word in words" :key="word.id">
+            <p>{{ word.firstWord.word }}</p>
+            <p>{{ word.secondWord.word }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>

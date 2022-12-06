@@ -1,6 +1,5 @@
 import { defineComponent, initCustomFormatter } from 'vue';
 import words from '@/mocks/words.json'
-import { Word } from '@/types/Word';
 import { LernsetWord } from '@/types/LernsetWord';
 
 export default defineComponent({
@@ -23,12 +22,14 @@ export default defineComponent({
         nextCard() {
             if (this.currentWordNumber < this.words.length - 1) {
                 this.currentWordNumber += 1;
+                this.active = false;
                 this.currentWord = this.words[this.currentWordNumber]
             }
         },
         previousCard() {
             if (this.currentWordNumber > 0) {
                 this.currentWordNumber -= 1;
+                this.active = false;
                 this.currentWord = this.words[this.currentWordNumber]
             }
         }
