@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "firstWord": {
+            "id": 1,
+            "language": "GERMAN",
+            "word": "Apfel"
+        },
+        "secondWord": {
+            "id": 2,
+            "language": "ENGLISH",
+            "word": "Apple"
+        }
+    },
+    {
+        "id": 1,
+        "firstWord": {
+            "id": 1,
+            "language": "GERMAN",
+            "word": "Baum"
+        },
+        "secondWord": {
+            "id": 2,
+            "language": "ENGLISH",
+            "word": "Tree"
+        }
+    }
+]

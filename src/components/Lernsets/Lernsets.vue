@@ -1,6 +1,6 @@
 <template>
   <div class="flex-box">
-    <div class="flex-box__lernset" v-for="lernset in lernsets" @click="getWordsFromLernset(lernset.name)" :key="lernset.name">
+    <div class="flex-box__lernset" v-for="lernset in lernsets" @click="navigateToLernset(lernset.id)" :key="lernset.name">
       <p class="lernset__title">{{lernset.name}}</p>
       <p class="lernset__description">{{lernset.description}}</p>
     </div>

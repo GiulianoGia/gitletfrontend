@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/Home/HomeView.vue'
 import NotFound from '@/views/NotFound/NotFoundView.vue';
 import Register from '@/views/Authentication/Register/Register.vue';
+import LernsetView from '@/views/LernsetView/LernsetView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/lernset/:id',
+    name: 'lernset',
+    component: LernsetView
   },
   {
     path: '/:catchAll(.*)',

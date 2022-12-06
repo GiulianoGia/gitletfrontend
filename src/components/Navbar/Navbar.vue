@@ -2,12 +2,12 @@
   <div class="navbar">
     <nav class="navbar__top-section">
     <div class="top-section__title">
-        <p>GitLet</p>
+        <router-link class="link" to="/"><p>GitLet</p></router-link>
     </div>
       <div class="top-section__features">
         <div class="features__items">
           <div class="items__item">
-            <p>Home</p>
+            <router-link class="link" to="/"><p>Home</p></router-link>
           </div>
           <div class="items__item">
             <p>Learn</p>
