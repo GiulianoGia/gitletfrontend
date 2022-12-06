@@ -1,6 +1,6 @@
 <template>
     <div class="search-field">
-        <input placeholder="search" />
+        <input :disabled="disabled" v-model="input" :placeholder="label" id="search-field"/>
     </div>
 </template>
 <script lang="ts" src="./SearchField.ts"></script>

@@ -8,6 +8,9 @@
     <div class="home__features">
       <Features />
     </div>
+    <div class="home__groups">
+      <Groups />
+    </div>
   </div>
 </template>
 <script lang="ts" src="./HomeView.ts"></script>

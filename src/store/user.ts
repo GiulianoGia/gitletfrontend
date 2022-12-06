@@ -23,7 +23,6 @@ export default createStore({
                     commit("SET_USERS", response.data);
                 });
             } catch (error) {
-                console.log(error);
             }
         },
         async fetchUser({ commit }) {
@@ -32,7 +31,6 @@ export default createStore({
                     commit("SET_USER", response.data);
                 })
             } catch (error) {
-                console.log(error);
             }
         }
     },
