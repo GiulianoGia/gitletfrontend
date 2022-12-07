@@ -1,19 +1,24 @@
-import { defineComponent, initCustomFormatter } from 'vue';
-import words from '@/mocks/words.json'
-import { LernsetWord } from '@/types/LernsetWord';
+import { defineComponent } from 'vue';
+import { getAllWordsFromLernset } from '@/Helper/words';
+import { WordList } from '@/types/WordList';
 
 export default defineComponent({
     name: 'Carousel',
+    props: {
+        lernsetName: {
+            type: String,
+            required: true
+        },
+    },
     data() {
         return {
-            words:  words,
+            words: {} as Array<WordList>,
             currentWordNumber: 0,
-            currentWord: {} as LernsetWord,
-            active: false
+            active: false,
         }
     },
-    created() {
-        this.currentWord = this.words[this.currentWordNumber]
+    async created() {
+        (await this).words = await getAllWordsFromLernset(this.lernsetName) as Array<WordList>
     },
     methods: {
         flipCard() {
@@ -23,14 +28,12 @@ export default defineComponent({
             if (this.currentWordNumber < this.words.length - 1) {
                 this.currentWordNumber += 1;
                 this.active = false;
-                this.currentWord = this.words[this.currentWordNumber]
             }
         },
         previousCard() {
             if (this.currentWordNumber > 0) {
                 this.currentWordNumber -= 1;
                 this.active = false;
-                this.currentWord = this.words[this.currentWordNumber]
             }
         }
     }

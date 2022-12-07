@@ -2,10 +2,9 @@
     <div class="carousel">
         <div class="carousel__container">
             <div class="container__card">
-                <button :class="active ? 'card__button--front' : 'card__button--back'" class="card__button"
-                    @click="flipCard">
-                    <p v-if="active">{{ currentWord.firstWord.word }}</p>
-                    <p v-else>{{ currentWord.secondWord.word }}</p>
+                <button :class="active ? 'card__button--front' : 'card__button--back'" class="card__button" @click="flipCard">
+                    <p v-if="active">{{words[currentWordNumber]?.firstWord.word}}</p>
+                    <p v-else>{{words[currentWordNumber]?.secondWord.word}}</p>
                 </button>
             </div>
         </div>

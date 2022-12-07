@@ -1,13 +1,18 @@
 export interface LernsetWord {
     id: number,
+    lernset: {
+        id: number,
+        name: string,
+        description: string
+    },
     firstWord: {
         id: number;
-        language: string,
+        language: Language,
         word: string
     },
     secondWord: {
         id: number;
-        language: string,
+        language: Language,
         word: string
     }
 }

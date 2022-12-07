@@ -1,5 +1,4 @@
 import { Lernset } from "@/types/Lernset";
-import { User } from "@/types/User";
 import axios from "axios";
 import { getCookie } from "./cookie";
 import { showNotification } from "./notification";

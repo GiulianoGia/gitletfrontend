@@ -4,6 +4,9 @@ import { defineComponent } from 'vue';
 import options from '@/mocks/options.json';
 import Carousel from '@/components/ Carousel/Carousel.vue';
 import words from '@/mocks/words.json'
+import { getAllWordsFromLernset } from '@/Helper/words';
+import { LernsetWord } from '@/types/LernsetWord';
+import { WordList } from '@/types/WordList';
 
 export default defineComponent({
     name: 'lernset-view',
@@ -11,7 +14,7 @@ export default defineComponent({
         return {
             lernset: {} as Lernset,
             options: options,
-            words: words
+            words: {} as Array<WordList>
         }
     },
     components: {
@@ -20,5 +23,6 @@ export default defineComponent({
     async created() {
         let id = this.$route.params.id;
         if (typeof id == 'string') (await this).lernset = await getLernsetById(parseInt(id));
-    }
+        (await this).words = await getAllWordsFromLernset('Lernset');
+    },
 })
