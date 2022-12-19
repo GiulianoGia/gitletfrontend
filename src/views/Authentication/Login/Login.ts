@@ -26,7 +26,7 @@ export default defineComponent({
       methods: {
         async loginUser() {
             if (isObjectEmpty(this.user)) {
-                login(this.user as User)
+                login(this.user as User);
             } else this.showError()
         },
         showError() {

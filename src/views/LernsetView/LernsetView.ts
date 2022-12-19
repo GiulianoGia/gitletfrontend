@@ -23,6 +23,6 @@ export default defineComponent({
     async created() {
         let id = this.$route.params.id;
         if (typeof id == 'string') (await this).lernset = await getLernsetById(parseInt(id));
-        (await this).words = await getAllWordsFromLernset('Lernset');
+        (await this).words = await getAllWordsFromLernset(this.lernset.name);
     },
 })

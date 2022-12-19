@@ -8,12 +8,12 @@
           <p class="options__option">{{ option }}</p>
         </div>
       </div>
-      <Carousel v-if="lernset.name" :lernsetName="lernset.name"/>
+      <Carousel v-if="lernset.name" :lernsetName="lernset.name" />
       <h3>Alle Begriffe</h3>
       <div class="container__overview">
         <div class="overview__section" v-for="word in words" :key="word.firstWord.id">
-          <p>{{word.firstWord.word}}</p>
-          <p>{{word.secondWord.word}}</p>
+          <p>{{ word.firstWord.word }}</p>
+          <p>{{ word.secondWord.word }}</p>
         </div>
       </div>
     </div>

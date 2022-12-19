@@ -1,0 +1,44 @@
+.interaction-lernset-view {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__action {
+        margin-bottom: 30px;
+
+        .action__input {
+            background-color: transparent;
+            outline: none;
+            color: white;
+            border: none;
+            border-bottom: 1px solid #4c4d4fba;
+            width: 100%;
+            font-size: larger;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__word-set {
+        margin-bottom: 30px;
+
+        .word-set__container {
+            padding: 30px;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 10px;
+            background-color: #313c4b63;
+
+            .container__input {
+                background-color: transparent;
+                outline: none;
+                color: white;
+                border: none;
+                border-bottom: 1px solid #4c4d4fba;
+                width: 200px;
+                height: 30px;
+            }
+        }
+    }
+}

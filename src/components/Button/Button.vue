@@ -1,7 +1,6 @@
 <template>
     <div class="button">
-        <button class="button__item"
-            type="button"
+        <button class="button__item" type="button"
             :class="[{ 'small': size === 'small' }, { 'medium': size === 'medium' }, { 'large': size === 'large' }, { 'max': size === 'max' }]">
             {{ label }}
         </button>

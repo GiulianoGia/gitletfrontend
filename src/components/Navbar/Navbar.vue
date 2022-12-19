@@ -13,7 +13,7 @@
             <p>Learn</p>
           </div>
           <div class="items__item">
-            <p>Create</p>
+            <router-link class="link" to="/interaction/lernset"><p>Editor</p></router-link>
           </div>
           <div class="items__item">
             <p>Groups</p>
