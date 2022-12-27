@@ -3,8 +3,8 @@
         <div class="login__modal">
             <h1>Login</h1>
             <form class="modal__form">
-                <InputField type="text" v-model="user.username" label="username" />
-                <InputField :disableValidation="true" type="password" v-model="user.password" label="password" />
+                <InputField id="firstInput" type="text" v-model="user.username" label="username" />
+                <InputField id="secondInput" :disableValidation="true" type="password" v-model="user.password" label="password" />
                 <Button label="Login" type="button" size="max" @click="loginUser"/>
             </form>
             <div class="modal__link">

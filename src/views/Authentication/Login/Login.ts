@@ -23,6 +23,13 @@ export default defineComponent({
         InputField,
         Button
       },
+      mounted() {
+        window.addEventListener("keypress", e => {
+            if (e.code === 'Enter') {
+                document.getElementById("firstInput")!.focus();
+            }
+        });
+    },
       methods: {
         async loginUser() {
             if (isObjectEmpty(this.user)) {

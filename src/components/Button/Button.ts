@@ -13,6 +13,10 @@ export default defineComponent({
             validator(value: string) {
                 return ['small', 'medium', 'large', 'max'].includes(value)
             }
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         }
     }
 })
