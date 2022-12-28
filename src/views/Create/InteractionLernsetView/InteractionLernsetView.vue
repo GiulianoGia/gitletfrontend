@@ -3,7 +3,7 @@
     <div>
       <div class="interaction-lernset-view__top">
         <h1>Lernset erstellen</h1>
-        <Button :disabled="createButton" label="create Lernset" type="button" size="max"/>
+        <Button @click="createNewLernset" :disabled="createButton" label="create Lernset" type="button" size="max" />
       </div>
       <div class="interaction-lernset-view__action">
         <label class="action__label" v-if="lernsetName">Titel</label>
@@ -13,6 +13,10 @@
         <label class="action__label" v-if="lernsetDescription">Beschreibung</label>
         <input class="action__input" v-model="lernsetDescription"
           placeholder="Das sollte eine kurze Beschreibung sein" />
+      </div>
+      <div class="interaction-lernset-view__selection">
+        <Selection v-model="firstWordLanguage" :selection="languages" label="Begriff Language"/>
+        <Selection v-model="secondWordLanguage" :selection="languages" label="Definition Language"/>
       </div>
       <div class="interaction-lernset-view__word-set">
         <div v-for="(i, index) in lernsetWords" :key="i" class="word-set__container">
@@ -32,11 +36,10 @@
           <input class="container__input" id="secondInput" placeholder="Definition" @input="addSecondWordToList" />
         </div>
       </div>
-      <Button :disabled="addButton" label="add Word" type="button" size="medium" @click="addWord()">add new Word</Button>
+      <Button :disabled="addButton" label="add Word" type="button" size="medium" @click="addWord()">add new
+        Word</Button>
     </div>
   </div>
 </template>
 <script lang="ts" src="./InteractionLernsetView.ts"></script>
-<style scoped lang="scss" src="./InteractionLernsetView.scss">
-
-</style>
+<style scoped lang="scss" src="./InteractionLernsetView.scss"></style>

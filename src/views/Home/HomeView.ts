@@ -30,7 +30,7 @@ export default defineComponent({
     
   },
   async created() {
-    redirectIfAuth();
+    redirectIfAuth('/');
     (await this).user = await getCurrentUser() as User
   },
 });

@@ -42,6 +42,6 @@ export default defineComponent({
         }
     },
     created() {
-        redirectIfAuth();
+        redirectIfAuth('login');
     }
 }); 

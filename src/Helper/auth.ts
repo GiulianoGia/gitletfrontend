@@ -10,7 +10,7 @@ export function isEmpty(obj: Object) {
     return true;
 }
 
-export function redirectIfAuth() {
-    if (getCookie('session') == undefined) router.push("login");
-    else router.push("/")
+export function redirectIfAuth(pos: string) {
+    if (getCookie('session') == undefined) router.push("/login");
+    else router.push(`/${pos}`)
 }

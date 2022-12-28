@@ -1,0 +1,15 @@
+.select {
+    margin-bottom: 5px;
+    &__label {
+        margin-right: 20px;
+    }
+
+    &__selection {
+        -webkit-appearance: none;
+        color: white;
+        background-color: #313c4b63;
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+    }
+}

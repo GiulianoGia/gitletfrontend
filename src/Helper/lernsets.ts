@@ -28,3 +28,7 @@ export async function getLernsetById(lernsetId: number): Promise<Lernset> {
         return {} as Lernset;
     }
 }
+
+export function createNewLernset(lernsetName: string, lernsetDescription: string, lernsetWords: Array<String>): void {
+
+}

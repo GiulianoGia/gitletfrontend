@@ -73,7 +73,7 @@ export async function loginUser(user: User) {
             setUserSession(session, user.username, user.password);
             document.cookie = `username=${user.username}`;
             document.cookie = `session=${session}`;
-            redirectIfAuth();
+            redirectIfAuth('/');
         })
         .catch((error) => showNotification());
 }

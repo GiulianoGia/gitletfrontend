@@ -1,7 +1,10 @@
 import { defineComponent } from 'vue';
 import Button from '@/components/Button/Button.vue';
 import InputField from '@/components/InputField/InputField.vue';
-import { Word } from '@/types/Word';
+import Selection from '@/components/Selection/Selection.vue';
+import { redirectIfAuth } from '@/Helper/auth';
+import { getCurrentUser } from '@/Helper/user';
+import { User } from '@/types/User';
 
 export default defineComponent({
     name: 'InteractionLernsetView',
@@ -16,12 +19,15 @@ export default defineComponent({
             lernsetWords: [] as any,
             lernsetName: '',
             lernsetDescription: '',
-            languages: {} as Array<String>
+            firstWordLanguage: '',
+            secondWordLanguage: '',
+            languages: ['English', 'German', 'French', 'Spanish'] as Array<String>,
         }
     },
     components: {
         Button,
-        InputField
+        InputField,
+        Selection
     },
     mounted() {
         window.addEventListener("keypress", e => {
@@ -53,6 +59,9 @@ export default defineComponent({
         }
     },
     methods: {
+        createNewLernset() {
+
+        },
         deleteWord(id: number) {
             const index = this.lernsetWords.indexOf(id);
             this.lernsetWords.splice(index, 1);
@@ -79,5 +88,8 @@ export default defineComponent({
         addSecondWordToList(evt: Event) {
             this.wordsSet.secondWord = (evt.target as HTMLInputElement).value;
         }
-    }
+    },
+    async created() {
+        redirectIfAuth('interaction/lernset');
+      },
 })
