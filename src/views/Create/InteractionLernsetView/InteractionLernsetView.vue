@@ -15,8 +15,8 @@
           placeholder="Das sollte eine kurze Beschreibung sein" />
       </div>
       <div class="interaction-lernset-view__selection">
-        <Selection v-model="firstWordLanguage" :selection="languages" label="Begriff Language"/>
-        <Selection v-model="secondWordLanguage" :selection="languages" label="Definition Language"/>
+        <Selection v-model="firstWordLanguage" :selection="languages" label="Begriff Language" />
+        <Selection v-model="secondWordLanguage" :selection="languages" label="Definition Language" />
       </div>
       <div class="interaction-lernset-view__word-set">
         <div v-for="(i, index) in lernsetWords" :key="i" class="word-set__container">

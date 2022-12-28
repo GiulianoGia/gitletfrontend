@@ -12,5 +12,5 @@
         </div>
     </div>
 </template>
-<style scoped lang="scss" src="./Features.scss"></style>
 <script lang="ts" src="./Features.ts"></script>
+<style scoped lang="scss" src="./Features.scss"></style>

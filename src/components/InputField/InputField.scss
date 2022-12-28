@@ -18,11 +18,13 @@
             width: 100%;
             color: white;
         }
+
         .sub__field::placeholder {
             font-size: 15px;
             color: #b4bcc2;
         }
     }
+
     &__label {
         font-size: 15px;
         color: #b4bcc2;
@@ -35,9 +37,11 @@
 .error {
     border: 1px solid rgb(238, 83, 83);
 }
+
 .valid {
     border: 1px solid green;
 }
-.active .input__label{
+
+.active .input__label {
     margin-top: -18px;
 }

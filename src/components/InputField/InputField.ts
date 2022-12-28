@@ -23,7 +23,7 @@ export default defineComponent({
         disableValidation: {
             type: Boolean,
             required: false,
-        } 
+        }
     },
     emits: ['update:modelValue'],
     data() {
@@ -36,9 +36,9 @@ export default defineComponent({
             active: false,
             disableValidations: this.disableValidation
         }
-    },   methods: {
-        validate(text: string, type: string):boolean {
-            if (text !== '' && !this.disableValidations)  {
+    }, methods: {
+        validate(text: string, type: string): boolean {
+            if (text !== '' && !this.disableValidations) {
                 if (type === 'password') return validatePassword(text);
                 else if (type === 'email') return validateEmail(text);
                 else if (type === 'text') return validateText(text);
@@ -48,7 +48,7 @@ export default defineComponent({
         }
     },
     watch: {
-        'text': function() {
+        'text': function () {
             this.maxNumber = this.count - this.text.length;
             if (this.text.length > 0) {
                 this.active = true;

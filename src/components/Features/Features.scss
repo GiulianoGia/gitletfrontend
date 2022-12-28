@@ -1,9 +1,11 @@
 .features {
     background-color: #15171e;
     padding: 20px;
+
     &__flexbox {
         display: flex;
         gap: 20px;
+
         .flexbox__container {
             cursor: pointer;
             display: flex;
@@ -21,6 +23,7 @@
                 font-size: 40px;
             }
         }
+
         .flexbox__container:hover {
             background-color: #313c4b3e;
         }

@@ -1,22 +1,22 @@
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    name: 'Button',
+    name: "Button",
     props: {
         label: {
             type: String,
-            default: 'Click'
+            default: "Click",
         },
         size: {
             type: String,
-            default: 'medium',
+            default: "medium",
             validator(value: string) {
-                return ['small', 'medium', 'large', 'max'].includes(value)
-            }
+                return ["small", "medium", "large", "max"].includes(value);
+            },
         },
         disabled: {
             type: Boolean,
-            default: false
-        }
-    }
-})
+            default: false,
+        },
+    },
+});

@@ -3,8 +3,6 @@ import Button from '@/components/Button/Button.vue';
 import InputField from '@/components/InputField/InputField.vue';
 import Selection from '@/components/Selection/Selection.vue';
 import { redirectIfAuth } from '@/Helper/auth';
-import { getCurrentUser } from '@/Helper/user';
-import { User } from '@/types/User';
 
 export default defineComponent({
     name: 'InteractionLernsetView',
@@ -91,5 +89,5 @@ export default defineComponent({
     },
     async created() {
         redirectIfAuth('interaction/lernset');
-      },
+    },
 })

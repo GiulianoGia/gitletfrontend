@@ -1,8 +1,6 @@
 import { defineComponent } from 'vue';
 import { Lernset } from '@/types/Lernset';
 import { getLernsetFromUser } from '@/Helper/lernsets';
-import { Word } from '@/types/Word';
-import { getAllWordsFromLernset } from '@/Helper/words'
 import router from '@/router';
 
 export default defineComponent({

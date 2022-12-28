@@ -3,9 +3,7 @@ import { Lernset } from '@/types/Lernset';
 import { defineComponent } from 'vue';
 import options from '@/mocks/options.json';
 import Carousel from '@/components/ Carousel/Carousel.vue';
-import words from '@/mocks/words.json'
 import { getAllWordsFromLernset } from '@/Helper/words';
-import { LernsetWord } from '@/types/LernsetWord';
 import { WordList } from '@/types/WordList';
 
 export default defineComponent({

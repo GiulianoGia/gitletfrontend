@@ -7,9 +7,7 @@ import SearchField from '@/components/SearchField/SearchField.vue';
 import { redirectIfAuth } from '@/Helper/auth';
 import { Group } from '@/types/Group';
 import Groups from '@/components/Groups/Groups.vue'
-import { isObjectEmpty } from '@/Helper/object';
-import { deleteCookie } from '@/Helper/cookie';
- 
+
 export default defineComponent({
   name: 'Home',
   data() {
@@ -26,8 +24,8 @@ export default defineComponent({
   },
   methods: {
   },
-  computed: { 
-    
+  computed: {
+
   },
   async created() {
     redirectIfAuth('/');

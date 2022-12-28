@@ -8,25 +8,28 @@
             margin-bottom: 0;
             font-size: 40px;
         }
+
         .container__options {
             display: flex;
             gap: 20px;
-    
+
             .options__option {
                 padding: 20px 40px;
                 background-color: #313c4b63;
                 border-radius: 5px;
                 cursor: pointer;
             }
+
             .options__option:hover {
                 background-color: #313c4be3;
             }
         }
+
         .container__overview {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            
+
             .overview__section {
                 border-radius: 5px;
                 width: 100%;
@@ -36,6 +39,7 @@
                 justify-content: space-around;
                 align-items: center;
             }
+
             .overview__section:hover {
                 background-color: #313c4b;
             }

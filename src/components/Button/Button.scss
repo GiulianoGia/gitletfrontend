@@ -1,5 +1,5 @@
 .button {
-    
+
     &__item {
         padding: 15px 0px;
         border: 2px solid #3f85ed;
@@ -7,23 +7,29 @@
         color: white;
         border-radius: 30px;
     }
+
     &__item:hover:enabled {
-        background-color:#3f85ed;
+        background-color: #3f85ed;
     }
 }
+
 .max {
     padding: 15px 20px;
     width: 100%;
 }
+
 .large {
     width: 80%;
 }
+
 .medium {
     width: 30%;
 }
+
 .small {
     width: 20%;
 }
+
 .disabled {
     opacity: 20%;
 }
