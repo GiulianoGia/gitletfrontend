@@ -30,5 +30,11 @@ export async function getLernsetById(lernsetId: number): Promise<Lernset> {
 }
 
 export function createNewLernset(lernsetName: string, lernsetDescription: string, lernsetWords: Array<String>): void {
+    try {
+        axios.post(``).then (() => {
 
+        });
+    } catch(error) {
+        showNotification();
+    }
 }

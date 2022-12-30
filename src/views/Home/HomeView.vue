@@ -9,6 +9,7 @@
       <Features />
     </div>
     <div class="home__groups">
+      <h2>Groups</h2>
       <Groups />
     </div>
   </div>

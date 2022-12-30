@@ -3,6 +3,8 @@ import Button from '@/components/Button/Button.vue';
 import InputField from '@/components/InputField/InputField.vue';
 import Selection from '@/components/Selection/Selection.vue';
 import { redirectIfAuth } from '@/Helper/auth';
+import { WordList } from '@/types/WordList';
+import { Language } from '@/types/enum/Language';
 
 export default defineComponent({
     name: 'InteractionLernsetView',
@@ -14,7 +16,7 @@ export default defineComponent({
             },
             createButton: true,
             addButton: true,
-            lernsetWords: [] as any,
+            lernsetWords: [] as Array<WordList>,
             lernsetName: '',
             lernsetDescription: '',
             firstWordLanguage: '',
@@ -58,20 +60,30 @@ export default defineComponent({
     },
     methods: {
         createNewLernset() {
-
+            
         },
         deleteWord(id: number) {
-            const index = this.lernsetWords.indexOf(id);
-            this.lernsetWords.splice(index, 1);
+            this.lernsetWords.splice(id, 1);
         },
         addWord() {
             if (this.wordsSet.firstWord !== '' && this.wordsSet.secondWord !== '') {
                 const words = {
-                    firstWord: this.wordsSet.firstWord,
-                    secondWord: this.wordsSet.secondWord
-                }
+                    firstWord: {word: this.wordsSet.firstWord, language: this.languageMapper(this.firstWordLanguage)},
+                    secondWord: {word: this.wordsSet.secondWord, language: this.languageMapper(this.secondWordLanguage)}
+                } as WordList
                 this.lernsetWords.push(words);
                 this.resetWordSet();
+            }
+        },
+        languageMapper(language: string): Language {
+            if (language.toLocaleUpperCase() === Language.ENGLISH.toString()) {
+                return Language.ENGLISH;
+            } else if (language.toLocaleUpperCase() === Language.FRENCH.toString()) {
+                return Language.FRENCH;
+            } else if (language.toLocaleUpperCase() === Language.GERMAN.toString()) {
+                return Language.GERMAN;
+            } else {
+                return Language.SPANISH;
             }
         },
         resetWordSet() {

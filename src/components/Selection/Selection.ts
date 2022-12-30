@@ -15,7 +15,8 @@ export default defineComponent({
     },
     methods: {
         updateSelection(event: any) {
-            console.log(event.target.value);
+            const value = event.target.value;
+            this.$emit("update:modelValue", value);
         }
     }
 })

@@ -19,16 +19,16 @@
         <Selection v-model="secondWordLanguage" :selection="languages" label="Definition Language" />
       </div>
       <div class="interaction-lernset-view__word-set">
-        <div v-for="(i, index) in lernsetWords" :key="i" class="word-set__container">
+        <div v-for="(i, index) in lernsetWords" :key="i.firstWord.word" class="word-set__container">
           <p class="container__count">{{ index + 1 }}</p>
-          <button class="container__delete" @click="deleteWord(i)">x</button>
+          <button class="container__delete" @click="deleteWord(index)">x</button>
           <div>
-            <label class="container__label" v-if="i.firstWord">Begriff</label>
-            <input class="container__input" v-model="i.firstWord" placeholder="Begriff" />
+            <label class="container__label" v-if="i.firstWord.word">Begriff</label>
+            <input class="container__input" v-model="i.firstWord.word" placeholder="Begriff" />
           </div>
           <div>
-            <label class="container__label" v-if="i.secondWord">Definition</label>
-            <input class="container__input" v-model="i.secondWord" placeholder="Definition" />
+            <label class="container__label" v-if="i.secondWord.word">Definition</label>
+            <input class="container__input" v-model="i.secondWord.word" placeholder="Definition" />
           </div>
         </div>
         <div class="word-set__container" style="padding: 30px; border: 1px solid #3f85ed8f">
