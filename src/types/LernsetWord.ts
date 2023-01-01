@@ -1,3 +1,5 @@
+import { Language } from "./enum/Language";
+
 export interface LernsetWord {
     id: number,
     lernset: {
