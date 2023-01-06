@@ -1,10 +1,10 @@
 import { defineComponent } from 'vue';
 import { User } from '@/types/User'
-import { createUser, setUserSession } from "@/Helper/user";
-import { validateEmail, validatePassword } from '@/Helper/valid';
+import { createUser } from "@/Helper/user";
 import InputField from '@/components/InputField/InputField.vue';
 import Button from '@/components/Button/Button.vue';
 import { isObjectEmpty } from '@/Helper/object';
+import { showNotification } from '@/Helper/notification';
 
 export default defineComponent({
     name: 'register',
@@ -23,15 +23,18 @@ export default defineComponent({
         InputField,
         Button
     },
+    mounted() {
+        window.addEventListener("keypress", e => {
+            if (e.code === 'Enter') {
+                this.createNewUser();
+            }
+        });
+    },
     methods: {
-        async createNewUser() {
-            if (isObjectEmpty(this.user) && validateEmail(this.user.email) && validatePassword(this.user.password) && typeof parseInt(this.user.age.toString()) === 'number') {
-                await createUser(this.user.username, this.user.password, this.user.age, this.user.email);
-            } else this.showError();
+        createNewUser() {
+            if (isObjectEmpty(this.user)) {
+                createUser(this.user);
+            } else showNotification();
         },
-        showError() {
-            this.error = true;
-            setTimeout(() => {this.error = false}, 1500);
-        }
     },
 })

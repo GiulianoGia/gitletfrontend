@@ -28,7 +28,7 @@ export default defineComponent({
         });
     },
     methods: {
-        async loginUser() {
+        loginUser() {
             if (isObjectEmpty(this.user)) {
                 login(this.user as User);
             } else showNotification();

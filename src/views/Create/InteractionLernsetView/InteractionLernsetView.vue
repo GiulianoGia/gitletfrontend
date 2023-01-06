@@ -42,4 +42,6 @@
   </div>
 </template>
 <script lang="ts" src="./InteractionLernsetView.ts"></script>
-<style scoped lang="scss" src="./InteractionLernsetView.scss"></style>
+<style scoped lang="scss" src="./InteractionLernsetView.scss">
+
+</style>

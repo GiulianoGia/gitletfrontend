@@ -1,7 +1,6 @@
-import { computed, defineComponent, onBeforeMount } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { User } from '@/types/User'
 import { getCurrentUser } from '@/Helper/user';
-import sideBar from '@/store/sideBar';
 import Button from '../Button/Button.vue';
 import { deleteCookie } from '@/Helper/cookie';
 

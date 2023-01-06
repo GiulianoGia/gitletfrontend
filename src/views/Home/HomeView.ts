@@ -1,4 +1,4 @@
-import { defineComponent, getCurrentInstance } from 'vue';
+import { defineComponent } from 'vue';
 import { User } from '@/types/User'
 import { getCurrentUser } from '@/Helper/user';
 import Lernsets from '@/components/Lernsets/Lernsets.vue';

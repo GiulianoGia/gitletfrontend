@@ -38,16 +38,21 @@ export async function getAllUsers(): Promise<Array<User>> {
  * @param email email of the uesr
  * @returns void
  */
-export async function createUser(username: string, password: string, age: number, email: string) {
-    return await axios.post(`http://localhost:8081/new/user?username=${username}&password=${password}&age=${age}&email=${email}`).then(reponse => {
+export async function createUser(user: User) {
+    return await axios.post(`http://localhost:8081/new/user?username=${user.username}&password=${user.password}&age=${user.age}&email=${user.email}`).then(reponse => {
         const user: User = reponse.data;
-        if (isObjectEmpty(user)) {
+        if (!isObjectEmpty(user)) {
             store.state.user = user;
             const session = hashCode(user.username).toString();
             setUserSession(session, user.username, user.password);
             document.cookie = `username=${user.username}`;
             document.cookie = `session=${session}`;
+            router.push("/");
+        } else {
+            showNotification();
         }
+    }).catch(() => {
+        showNotification();
     })
 }
 

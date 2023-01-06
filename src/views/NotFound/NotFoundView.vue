@@ -4,4 +4,6 @@
         <img class="not-found__image" src="@/assets/404.png" />
     </div>
 </template>
-<style lang="scss" src="./NotFoundView.scss"></style>
+<style lang="scss" src="./NotFoundView.scss">
+
+</style>

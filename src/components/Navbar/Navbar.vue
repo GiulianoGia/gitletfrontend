@@ -25,7 +25,9 @@
             <p>Groups</p>
           </div>
           <div class="items__item">
-            <button @click="!isSidebarActive ? showSidebar() : hideSidebar()" class="item__button"><p>Profile</p></button>
+            <button @click="!isSidebarActive ? showSidebar() : hideSidebar()" class="item__button">
+              <p>Profile</p>
+            </button>
           </div>
         </div>
       </div>

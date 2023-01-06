@@ -23,4 +23,6 @@
   </div>
 </template>
 <script lang="ts" src="./LernsetView.ts"></script>
-<style lang="scss" src="./LernsetView.scss" scoped></style>
+<style lang="scss" src="./LernsetView.scss" scoped>
+
+</style>
