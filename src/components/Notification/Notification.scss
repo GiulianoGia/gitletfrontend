@@ -1,6 +1,6 @@
 .notification {
     display: flex;
-    background-color: red;
+    background-color: rgb(238, 83, 83);
     width: 100%;
     height: 60px;
     text-align: center;
@@ -8,11 +8,10 @@
     color: white;
     font-weight: 800;
     font-size: 20px;
+    transition: 2s;
 }
 
 .disabled {
     display: none;
-}
-.enabled {
-    display: true;
+    transition: 2s;
 }

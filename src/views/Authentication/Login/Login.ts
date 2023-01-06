@@ -4,7 +4,7 @@ import InputField from "@/components/InputField/InputField.vue";
 import Button from "@/components/Button/Button.vue";
 import { isObjectEmpty } from "@/Helper/object";
 import { loginUser as login } from "@/Helper/user";
-import { redirectIfAuth } from "@/Helper/auth";
+import { showNotification } from "@/Helper/notification";
 
 export default defineComponent({
     name: 'login',
@@ -14,7 +14,6 @@ export default defineComponent({
                 username: '',
                 password: ''
             },
-            error: false
         };
     },
     components: {
@@ -24,7 +23,7 @@ export default defineComponent({
     mounted() {
         window.addEventListener("keypress", e => {
             if (e.code === 'Enter') {
-                document.getElementById("firstInput")!.focus();
+                this.loginUser();
             }
         });
     },
@@ -32,14 +31,7 @@ export default defineComponent({
         async loginUser() {
             if (isObjectEmpty(this.user)) {
                 login(this.user as User);
-            } else this.showError()
+            } else showNotification();
         },
-        showError() {
-            this.error = true;
-            setTimeout(() => { this.error = false }, 1500);
-        }
-    },
-    created() {
-        redirectIfAuth('login');
     }
 }); 

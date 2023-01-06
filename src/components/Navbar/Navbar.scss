@@ -42,6 +42,16 @@
                 .items__item:hover {
                     text-decoration: underline;
                 }
+
+                .item__button {
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    outline: none;
+                }
             }
         }
     }

@@ -1,0 +1,15 @@
+.side-bar {
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.351);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom-left-radius: 5px;
+    padding: 50px;
+    top: 60px;
+    right: 0px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

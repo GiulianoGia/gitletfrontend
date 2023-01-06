@@ -4,7 +4,6 @@ import { getCurrentUser } from '@/Helper/user';
 import Lernsets from '@/components/Lernsets/Lernsets.vue';
 import Features from '@/components/Features/Features.vue';
 import SearchField from '@/components/SearchField/SearchField.vue';
-import { redirectIfAuth } from '@/Helper/auth';
 import { Group } from '@/types/Group';
 import Groups from '@/components/Groups/Groups.vue'
 
@@ -28,7 +27,6 @@ export default defineComponent({
 
   },
   async created() {
-    redirectIfAuth('/');
     (await this).user = await getCurrentUser() as User
   },
 });

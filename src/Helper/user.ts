@@ -5,8 +5,8 @@ import { LoginResponse } from "@/types/Auth/LoginResponse";
 import { hashCode } from "./hash";
 import store from "@/store/user";
 import router from "@/router";
-import { redirectIfAuth } from "./auth";
 import { getCookie } from "./cookie";
+import { isObjectEmpty } from "./object";
 
 /**
  * 
@@ -38,10 +38,17 @@ export async function getAllUsers(): Promise<Array<User>> {
  * @param email email of the uesr
  * @returns void
  */
-export async function createUser(username: string, password: string, age: number, email: string): Promise<User> {
-    return await fetch(`http://localhost:8081/new/user?username=${username}&password=${password}&age=${age}&email=${email}`)
-        .then((reponse) => reponse.json())
-        .then((data: User) => { return data });
+export async function createUser(username: string, password: string, age: number, email: string) {
+    return await axios.post(`http://localhost:8081/new/user?username=${username}&password=${password}&age=${age}&email=${email}`).then(reponse => {
+        const user: User = reponse.data;
+        if (isObjectEmpty(user)) {
+            store.state.user = user;
+            const session = hashCode(user.username).toString();
+            setUserSession(session, user.username, user.password);
+            document.cookie = `username=${user.username}`;
+            document.cookie = `session=${session}`;
+        }
+    })
 }
 
 /**
@@ -55,7 +62,7 @@ export async function deleteUser(id: number) {
         .catch((error) => console.log(error));
 }
 
-function setUserSession(session: string, username: string, password: string) {
+export function setUserSession(session: string, username: string, password: string) {
     axios.post(`http://localhost:8081/set/session/user?username=${username}&password=${password}&session=${session}`);
 }
 
@@ -65,15 +72,19 @@ function setUserSession(session: string, username: string, password: string) {
  * @creates cookie and session for the user
  */
 export async function loginUser(user: User) {
-    return await axios.post(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`, {method: 'POST'})
+    return await axios.post(`http://localhost:8081/login/user?username=${user.username}&password=${user.password}`, { method: 'POST' })
         .then((response) => {
-            const user: User = response.data;
-            store.state.user = user;
-            const session = hashCode(user.username).toString();
-            setUserSession(session, user.username, user.password);
-            document.cookie = `username=${user.username}`;
-            document.cookie = `session=${session}`;
-            redirectIfAuth('/');
+            const loggedInUser: User = response.data;
+            if (isObjectEmpty(loggedInUser)) {
+                store.state.user = loggedInUser;
+                const session = hashCode(user.username).toString();
+                setUserSession(session, user.username, user.password);
+                document.cookie = `username=${user.username}`;
+                document.cookie = `session=${session}`;
+                router.push("/")
+            } else {
+                showNotification();
+            }
         })
-        .catch((error) => showNotification());
+        .catch(() => showNotification());
 }

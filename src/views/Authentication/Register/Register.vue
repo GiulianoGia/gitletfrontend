@@ -15,7 +15,7 @@
                 <div class="form__section">
                     <InputField type="number" v-model="user.age" label="age" />
                 </div>
-                <Button label="Register" size="max" />
+                <Button @click="createNewUser" label="Register" size="max" />
             </form>
             <div class="form__links">
                 <router-link class="links__link" to="login">Have already an Account</router-link>

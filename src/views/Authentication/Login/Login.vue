@@ -12,7 +12,6 @@
                 <router-link class="link__item" to="register">Don't have an Account</router-link>
                 <router-link class="link__item" to="">Forgot Password</router-link>
             </div>
-            <p v-if="error">Error!</p>
         </div>
     </div>
 </template>

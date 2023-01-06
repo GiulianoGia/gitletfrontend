@@ -5,6 +5,7 @@ import NotFound from '@/views/NotFound/NotFoundView.vue';
 import Register from '@/views/Authentication/Register/Register.vue';
 import LernsetView from '@/views/LernsetView/LernsetView.vue';
 import InteractionLernsetView from '@/views/Create/InteractionLernsetView/InteractionLernsetView.vue';
+import { isUserAuthenticated } from '@/Helper/auth';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -42,6 +43,11 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && to.name !== 'register' && !isUserAuthenticated()) next({ name: 'login' })
+  else next()
 })
 
 export default router
